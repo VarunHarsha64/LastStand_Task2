@@ -1,0 +1,357 @@
+body {
+    background-color: black;
+    font-family: "Press Start 2P", system-ui;
+    
+}
+
+.game-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.game-canvas{
+    position: relative;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(169, 92, 37, 0);
+}
+
+.game-overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25%;
+}
+
+.game-operations {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #a85b2400;
+    border-radius: 40px;
+    width: 36%;
+    justify-content: flex-end;
+    padding-right: 30px;
+    box-sizing: border-box;
+
+}
+
+.player-details {
+    height: 100%;
+    width: 36%;
+    display: flex;
+    align-items: center;
+    background-image: url('../../Sprites/player-details-bg.png');
+    background-size: cover;
+    justify-content: space-between;
+}
+
+.profile-pic {
+    flex :1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 15px;
+
+}
+.profile-pic img{
+    height: 80%;
+    width: 80%;
+
+}
+
+.player-stats {
+    flex:2;
+    background-color: rgba(255, 166, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 65%;
+    margin: 10px;
+    
+
+}
+
+.health-bar {
+    width: 95%; /* adjust the width to your liking */
+    height: 20px;
+    background-color: #ccc; /* gray background */
+    border-radius: 10px;
+    padding: 2px;
+}
+  
+.health-bar-inner {
+height: 100%;
+background-color: #ff2e2e; /* pink color for health */
+border-radius: 10px;
+transition: width 0.5s; /* animate the width change */
+}
+
+.power-up-bar {
+    width: 95%; /* adjust the width to your liking */
+    height: 20px;
+    background-color: #ccc; /* gray background */
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.fill {
+    height: 100%;
+    width: 0%;
+    background-color: #1c899f; /* pink color for health */
+    border-radius: 10px;
+    transition: width 0.5s; /* animate the width change */
+}
+
+.pause-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+.pause-button img{
+    height: 100%;
+    width: 100%;
+}
+
+.pause-button:hover {
+    transform: scale(1.1);
+}
+
+.pause-button:active {
+    transform: scale(0.9);
+}
+
+
+.pop-up {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    bottom: 20%;
+    right: 20%;
+    
+    z-index: 1;
+
+    
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+}
+
+.pop-up-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-up-header {
+    text-align: center;
+    font-size: 40px;
+}
+
+.countdown {
+    margin-top: 20px;
+    font-size: 90px;
+}
+
+
+.power-up-text {
+    display: block;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    position: absolute;
+    top: 150px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    z-index: 0;
+    transition: opacity 1s;
+}
+
+.game-overlay-layer-2 {
+
+    width: 1024px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gun-box {
+    display: grid;
+    grid-template-columns: 1.4fr 2fr;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 8px;
+
+}
+
+.gun-img {
+    height: 50px;
+    margin: 10px;
+
+}
+
+
+#swap-guns {
+  flex-grow: 0;
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+#swap-guns:hover,
+#swap-guns:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+#swap-guns:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+#swap-guns:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+.gun-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+.gun-showcase {
+    display: flex;
+    gap: 5px;
+}
+
+.swap-button-div {
+    display: flex;
+    justify-content: center;
+}
+.game-input-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.kills {
+    color: white;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.pre-game {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.73);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.pre-game-title {
+    margin: 50px;
+    font-size: 100px;
+}
+
+.button-89 {
+
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #ffffff;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  transform: scale(2);
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #515151;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Stand</title>
+    <link rel="stylesheet" href="game.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="pre-game">
+        <div class="pre-game-title">Last Stand</div>
+        <button class="button-89"> Click to Play</button>
+    </div>
+
+    <div class="game-container">
+        <div class="game-canvas">
+            <canvas></canvas>
+            <div class="game-overlay">
+                <div class="game-overlay-header">
+                    <div class="player-details">
+                        <div class="profile-pic">
+                            <img src="../../Sprites/player_profile_pic.png"> <!-- display player image -->
+                        </div>
+                        <div class="player-stats">
+                            <div class="health-bar">
+                                <div class="health-bar-inner" style="width: 100%;"></div>
+                            </div>
+                            <div class="power-up-bar">
+                                <div class="fill"></div>
+                              </div>
+                            <div class="level-bar">Level 0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timer" style="color: white; ">00:00:00</div>
+                    <div class="game-operations">
+                        <button class="pause-button">
+                            <img src="../../Sprites/pause-button-img.png" alt="Pause" class="pause-icon">
+                            <img src="../../Sprites/continue-button-img.png" alt="Continue" class="continue-icon" style="display: none;">
+                        </button>
+                    </div>
+                </div>
+                <div class="kills">
+                    <p style="color: white;">Kills:0</p>
+                </div>
+            </div>
+            
+            <div class="pop-up" style="display:none;">
+                <div class="pause-content pop-up-content" style="display: none;">
+                    <p class="pop-up-header" >Game Paused</p>
+                    <p class="countdown countdown-pause">3</p>
+                </div>
+                <div class="level-up-content pop-up-content" style="display: none;">
+                    <p class="pop-up-header">Level Up!</p>
+                    <p class="countdown countdown-level-up">3</p>
+                </div>
+                <div class="game-over-content pop-up-content" style="display: none;">
+                    <p class="pop-up-header">Zombies had a great Meal!</p>
+                    <p class="result-high-score">Highest Kills: 0</p>
+                    <p>Refresh to play again.</p>
+                </div>
+            </div>
+            <div class="power-up-text" style="color: white;">
+                <p>You got Temporary immunity</p>
+            </div>
+        </div>
+    </div>
+    <div class="game-input-container">
+        <div class="game-overlay-layer-2" style="color: white;"> 
+            <div class="highest-kills">
+                <p>Highest Kills: 0</p>
+            </div>
+            <div class="gun-container">
+                <div class="gun-showcase">
+                    <div class="gun-box" id="gun1" data-id="1">
+                        <img class="gun-img" src="../../Sprites/gun1-image.png" alt="Gun 1 Image">
+                        <div class="gun-info">
+                          <h3 data-id="1">AR</h3>
+                          <p>20 Damage | Faster</p>
+                        </div>
+                      </div>
+                      <div class="gun-box" id="gun2" >
+                        <img class="gun-img" src="../../Sprites/gun2-image.png" alt="Gun 2 Image">
+                        <div class="gun-info">
+                          <h3 data-id="2">Sniper</h3>
+                          <p>90 Damage | Slower</p>
+                        </div>
+                      </div>
+                </div>
+                
+                <div class="swap-button-div">
+                    <button id="swap-guns">Swap Guns | Press Shift</button>
+                </div>
+                
+              </div>
+        </div>
+    </div>
+    
+
+    <script src="../Data/DefaultBlocksPosition.js"></script>
+    <script src="../Utils/utils.js"></script>
+    <script src="../Classes/Sprite.js"></script>
+    <script src="../Classes/Player.js"></script>
+    <script src="../Classes/Zombie.js"></script>
+    <script src="../Classes/Bullet.js"></script>
+    <script src="../Classes/DefaultBlock.js"></script>
+    <script src="game.js"></script>
+    <script src="eventListeners.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Last Stand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style>
+		body {
+            color: white;
+			background-color: #f0f0f0;
+			font-family: 'Press Start 2P';
+			text-align: center;
+            background-image: url('./Sprites/index-background.jpg');
+            background-size: cover; /* This ensures the image covers the entire background */
+            background-position: center; /* This centers the image */
+		}
+		
+		.container {
+			width: 80%;
+			margin: 40px auto;
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.307));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border:1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            justify-content: center;
+            padding: 15px;
+		}
+
+        .content-container{
+            display: flex;
+        }
+
+        .left, .right {
+            width: 50%;
+            padding: 5%;
+        }
+        .left {
+            border-right: 1px solid #ccc;
+        }
+        h2 {
+            text-align: center;
+        }
+		
+		.play-button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 20px 30px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+            font-size: 25px;
+		}
+		
+		.play-button:hover {
+			background-color: #3e8e41;
+		}
+
+        h1 {
+            font-size: 30px;
+            color: #cecece;
+        }
+
+        p{
+            padding: 15px;
+            line-height: 20px;
+        }
+        strong{
+            padding: 5px;
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">Last Stand</h1>
+		<h1>zombies vs YOU</h1>
+        <div class="content-container">
+            <div class="left">
+                <h2>Game Features</h2>
+                <p>Dual Gun Modes:</p>
+                <p><strong>Sniper Mode:</strong> High damage with heavy recoil and slower reload.</p>
+                <p><strong>AR Mode:</strong> Moderate damage with fast recoil and quick reload.</p>
+                <p><strong>Player Mobility:</strong> Move left, right, and jump to dodge attacks and gain strategic advantage.</p>
+                <p><strong>Increasing Challenge:</strong> Zombies attack from both sides, with numbers growing each level.</p>
+                
+            </div>
+            <div class="right">
+                <p><strong>Variety of Zombies:</strong></p>
+                <p><strong>Fast Attackers:</strong> Swift and aggressive.</p>
+                <p><strong>Slow Walkers:</strong> Steady but dangerous in numbers.</p>
+
+                <h2>Power-Ups</h2>
+                <p>For every 10 kills, receive a random power-up:</p>
+                <p><strong>Immunity:</strong> Temporary invincibility.</p>
+                <p><strong>Faster Reload:</strong> Quicker reload speed.</p>
+                <p><strong>Mega Bullet:</strong> A powerful shot that annihilates all zombies in its path until it hits a wall.</p>
+            </div>
+        </div>
+        
+		<button class="play-button" onclick="location.href='./Scripts/General/game.html'">PLAY NOW!</button>
+	</div>
+</body>
+</html>
